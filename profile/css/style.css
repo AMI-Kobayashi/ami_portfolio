@@ -865,76 +865,70 @@ li {
         cursor: pointer;
     }
 }
-/* .readmore label img {
-        width: 105px;
-    } */
+.readmore label img {
+    width: 105px;
+}
+*/ .readmore input[type="checkbox"] {
+    display: none;
+}
 
-/* .readmore input[type="checkbox"] {
-        display: none;
-    } */
+.readmore-content {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+.readmore-content::before {
+    /* 同じ色の板を作って、次にafterで点線を作る */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    /* bottomのが距離近いので今回はbottom */
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #e6f4f8;
+}
 
-/* .readmore-content {
-        position: relative;
-        height: 350px;
-        overflow: hidden;
-    } */
-/* .readmore-content::before {
-        /* 同じ色の板を作って、次にafterで点線を作る */
-/* content: "";
-        position: absolute;
-        bottom: 0;
-        /* bottomのが距離近いので今回はbottom */
-/* left: 0;
-        display: block;
-        width: 100%;
-        height: 60px;
-        background: #e6f4f8;
-    /* } */
-*/ */ */
+.readmore-content::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
 
-    /* .readmore-content::before {
-      
-        content: "";
-        position: absolute;
-        bottom: 0;
-      
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 70px;
-        background: #e6f4f8;
-    } */
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 70px;
+    background: #e6f4f8;
+}
 
-    /* .readmore-content::after {
-        content: "";
-        position: absolute;
-        bottom: 10px;
-       
-        left: 49%;
-        right: 51%;
-        border-right: 2px dotted rgb(138, 137, 137);
-        width: 3px;
-        height: 30px;
-    } */
-    /* .readmore label img.open {
-        display: none;
-    }
-    .readmore input[type="checkbox"]:checked ~ .readmore-content {
-        height: auto;
-    } */
+.readmore-content::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
 
-    /* .readmore input[type="checkbox"]:checked ~ .readmore-content::before {
-     
-        display: none;
-    }
-    .readmore input[type="checkbox"]:checked ~ .readmore-content::after {
-       
-        display: none;
-    }
-    .readmore input[type="checkbox"]:checked + .readmore_btn img {
-        
-        display: none;
-    } */
+    left: 49%;
+    right: 51%;
+    border-right: 2px dotted rgb(138, 137, 137);
+    width: 3px;
+    height: 30px;
+}
+.readmore label img.open {
+    display: none;
+}
+.readmore input[type="checkbox"]:checked ~ .readmore-content {
+    height: auto;
+}
+
+.readmore input[type="checkbox"]:checked ~ .readmore-content::before {
+    display: none;
+}
+.readmore input[type="checkbox"]:checked ~ .readmore-content::after {
+    display: none;
+}
+.readmore input[type="checkbox"]:checked ~ .readmore_btn img {
+    display: none;
+}
 
 /* ここからCONTACT */
 #works {
