@@ -1,0 +1,1369 @@
+@charset "utf-8";
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #666666;
+    font-family: "筑紫A丸ゴシック", "fot-matisse-pron", sans-serif,
+        "Savoye LET Plain:1.0", "メイリオ", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", sans-serif;
+    font-feature-settings: "palt";
+    /* 上のやつは字幅メトリクスで指定 */
+}
+/* font-weight: 500; */
+/* font-style: normal; */
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+    /*  */
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* ここから課題 */
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#loading {
+    transition: all 1s;
+    position: relative;
+    left: 0;
+    right: 0;
+    background: #fff;
+    align-items: center;
+}
+.loading {
+    width: 100%;
+    background: white;
+}
+.spinner {
+    width: 430px;
+    height: 430px;
+    margin: -200px auto;
+    animation: spin 15s linear infinite;
+}
+.item {
+    width: 325px;
+    padding-left: 10px;
+    margin: -255px auto;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+
+body {
+    background: #fff; /*遷移アニメーションと同じ色を指定*/
+}
+
+body.container {
+    background: #fff; /*画面を開いた後の背景色を指定*/
+}
+
+.splashbg {
+    display: none;
+    content: "";
+    position: fixed;
+    transform: scale(100);
+    background-color: #daeef5; /*伸びる背景色の設定*/
+    /* a6a6b5 */
+    z-index: 999;
+    /*丸のスタートの形状*/
+    top: calc(50% - 1rem); /*50%から円の半径を引いた値*/
+    left: calc(50% - 1rem); /*50%から円の半径を引いた値*/
+    width: 2rem;
+    height: 2rem;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg {
+    display: block;
+    border-radius: 50%;
+    animation-name: PageAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes PageAnime {
+    0% {
+        /*丸のスタート位置と形状*/
+        transform: scale(100);
+    }
+    100% {
+        /*丸の終了位置と形状*/
+        transform: scale(0);
+        display: none; /*終了時は消える*/
+    }
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container {
+    opacity: 0; /*はじめは透過0に*/
+    background-color: white;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container {
+    animation-name: PageAnimeAppear;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    background: white;
+}
+
+@keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* スマホ版のcssスタート ：pcとspを出し分ける*/
+/* スマホ版メニューは消す */
+.sp_nav,
+.sp_btn {
+    display: none;
+    /* まずはpc版で非表示にしておく */
+}
+/* HEADER */
+
+body {
+    background-color: white;
+}
+/* .appear { */
+/* display: none; */
+/* } */
+#header {
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+}
+
+.wrap {
+    display: flex;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* ヘッダーの白帯だけ透過、他のロゴとテキストは透けない */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 3px 3px 3%;
+}
+h1 {
+    max-width: 150px;
+    width: 100%;
+    padding-left: 10%;
+    margin-right: 200px;
+    opacity: 0.7;
+}
+.nav_PC ul {
+    display: flex;
+    max-width: 80%;
+    padding-top: 15px;
+    align-items: center;
+    margin-left: 30px;
+}
+.nav_PC ul li {
+    font-size: 17px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #808080;
+    padding-left: 52px;
+}
+
+.nav_PC :last-child {
+    padding-bottom: 5px;
+    max-width: none;
+}
+.sp_nav,
+.sp_btn {
+    display: none;
+    /* まずはpc版で非表示にしておく */
+}
+.insta {
+    display: none;
+}
+section:nth-child(2n) {
+    background: #fff;
+}
+@media screen and (max-width: 1040px) {
+    /* ヘッダーのロゴが変わリ始める瞬間を、SP版に切り替えるタイミングにする */
+    .spinner {
+        width: 215px;
+        height: 215px;
+        margin: -100px auto;
+    }
+    .item {
+        width: 165px;
+        padding-left: 0px;
+        margin: -125px auto;
+    }
+    .wrap {
+        align-items: center;
+    }
+    .nav_PC {
+        display: none;
+    }
+
+    .sp_btn {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 99;
+        /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
+    }
+    /* 1本線作る */
+    .sp_btn span {
+        position: relative;
+        /* relative入ったタグが基準になる！（親要素にかける） */
+        /* relativeとtopなど組み合わせると
+        　棒線を好きなところに移動できる */
+        top: 10px;
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        /* 四角形の高さ低くして棒のように見せている */
+        transition: 0.3s;
+        /* これを入れると❌になるまでの過程をモーションで見ることができる
+        おしゃれ！全バッテンに追加*/
+    }
+    /* 擬似要素before・afterと「content: "";」追加
+    　　*/
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        /* absolute使う時には、親要素にrelativeを入れないといけない。
+        　　relativeが入った要素を基準に移動することになる */
+        content: "";
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        transition: 0.3s;
+    }
+    .sp_btn span::before {
+        bottom: 10px;
+        width: 25px;
+        /* 真ん中の線から下に10px */
+    }
+    .sp_btn span::after {
+        top: 10px;
+        width: 25px;
+        /* 真ん中の線から上に10px */
+    }
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    h1 {
+        width: 20vw;
+        padding-top: 5px;
+    }
+    .insta {
+        position: absolute;
+        top: 7px;
+        right: 80px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+        padding: 1%;
+    }
+
+    /* .sp_menu a { */
+    /* position: absolute; */
+    /* top: 10px; */
+    /* } */
+}
+
+/* メインビジュアル */
+#main {
+    max-width: 100%;
+}
+.main_visual_PC {
+    height: 768px;
+}
+.TOP_sky {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#main .TOP_sky_sp {
+    display: none;
+}
+
+.mark {
+    text-align: center;
+    margin-top: -670px;
+    margin-bottom: 600px;
+    width: 100%;
+}
+.pc_mark {
+    width: 480px;
+    /* Ami Kobayahshiのマークについて
+    これはちゃんとレスポンシブになっているのかしら💦 */
+}
+.sp_mark_top {
+    display: none;
+}
+
+.main_copy {
+    position: absolute;
+    right: 150px;
+    top: 0;
+    margin-top: 180px;
+
+    /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+}
+.copy {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    font-size: 25px;
+    color: #808080;
+    letter-spacing: 3px;
+    line-height: 2;
+    font-feature-settings: initial;
+}
+.scroll {
+    width: 2px;
+    margin: -475px auto 10px;
+}
+
+.intro_pc {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    color: #808080;
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 2.5;
+    font-feature-settings: initial;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+.intro_sp {
+    display: none;
+}
+@media screen and (max-width: 1040px) {
+    .main_copy {
+        position: absolute;
+        left: 5%;
+        display: block;
+        text-align: center;
+        padding-top: 330px;
+
+        /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+    }
+    .copy {
+        writing-mode: horizontal-tb;
+        font-size: 18px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin-left: 70px;
+        width: 100%;
+    }
+    .TOP_sky {
+        display: none;
+    }
+    .main_visual_PC {
+        height: 667px;
+    }
+    #main .TOP_sky_sp {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pc_mark {
+        display: none;
+        /* Ami Kobayahshiのマークについて
+        これはちゃんとレスポンシブになっているのかしら💦 */
+    }
+    .sp_mark_top {
+        display: block;
+        /* text-align: center; */
+        padding-top: 120px;
+        max-width: 350px;
+        width: 80%;
+        margin: 0 auto;
+        padding-right: 20px;
+
+        /* Ami Kobayahshiのマークについて
+        これはちゃんとレスポンシブになっているのかしら💦 */
+    }
+    .scroll {
+        width: 2px;
+        height: 30px;
+        margin: -435px auto 0px;
+    }
+
+    .intro_pc {
+        display: none;
+    }
+    .intro_sp {
+        display: block;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        color: #666666;
+        font-size: 13px;
+        letter-spacing: 1.75px;
+        line-height: 2;
+        font-feature-settings: initial;
+        margin: 30px auto 0;
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+}
+
+/* Profile */
+#profile {
+    position: relative;
+    /* 親要素にかけて上げないといけないrelativeちゃん */
+    padding-top: 250px;
+    padding-bottom: 100px;
+}
+.sp_bird01 {
+    display: none;
+}
+
+.profile_text {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0 0 30px;
+    z-index: 1;
+}
+.who {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.who_sp {
+    display: none;
+}
+
+#profile h2 {
+    font-size: 40px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 5px;
+}
+.sp_profile_title {
+    display: none;
+}
+.jam {
+    font-size: 16px;
+    padding-top: 70px;
+    letter-spacing: 3px;
+}
+.design_copy {
+    font-size: 16px;
+    padding-top: 25px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+}
+.support {
+    font-size: 16px;
+    padding-top: 20px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+}
+.sp_profile_text {
+    display: none;
+}
+.btn01_eye {
+    width: 143px;
+    margin-top: 80px;
+    margin-left: -10px;
+    padding: 10px;
+}
+
+.AMI_pc {
+    position: absolute;
+    max-width: 1000px;
+    width: 35%;
+    top: 20px;
+    right: 170px;
+    padding-top: 130px;
+    margin: auto;
+    z-index: 2;
+}
+.AMI_sp {
+    display: none;
+}
+.hude .hude {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    top: 0;
+    left: 80px;
+    padding-top: 350px;
+
+    z-index: -1;
+}
+.sp_hude {
+    display: none;
+}
+
+.blueberry {
+    max-width: 340px;
+    display: block;
+    animation-name: fadeInAnime;
+    animation-duration: 17s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.blueberry img {
+    position: absolute;
+    max-width: 340px;
+    width: 35%;
+    top: -150px;
+    right: 10px;
+    z-index: 1;
+}
+.btn01_eye {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 170px;
+}
+
+.btn {
+    display: block;
+    height: 100%;
+}
+.btn:hover {
+    opacity: 1;
+}
+.btn .btn-on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.btn:hover .btn-off {
+    opacity: 0;
+    transition: 0.3s;
+}
+.btn:hover .btn-on {
+    opacity: 1;
+}
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    #profile {
+        position: relative;
+        margin-top: 200px;
+    }
+    .sp_bird01 {
+        display: block;
+        position: absolute;
+        top: -100px;
+        left: 0;
+    }
+
+    .sp_profile_title {
+        display: block;
+        margin: 0 auto;
+        padding-right: 30px;
+        width: 200px;
+    }
+    #profile h2 {
+        display: none;
+    }
+    .profile_text {
+        padding-top: 400px;
+        max-width: 96%;
+        margin: 0 auto;
+    }
+
+    .who {
+        display: none;
+    }
+
+    .who_sp {
+        display: block;
+        font-size: 10px;
+        padding-right: 30px;
+        text-align: center;
+        margin-top: -650px;
+        margin-bottom: 5px;
+    }
+
+    .AMI_pc {
+        display: none;
+    }
+    .AMI_sp {
+        display: block;
+        position: absolute;
+        max-width: 285px;
+        width: 100%;
+        top: 100px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding-top: 0px;
+    }
+
+    .sp_profile_text {
+        display: block;
+        max-width: 316px;
+        text-align: center;
+        font-size: 15px;
+        letter-spacing: 3px;
+        line-height: 1.5;
+        padding-top: 350px;
+        padding-right: 30px;
+        margin: 0 auto;
+    }
+    .blueberry {
+        max-width: 340px;
+        display: block;
+        animation-name: none;
+        opacity: 1;
+    }
+    .blueberry img {
+        position: absolute;
+        max-width: 340px;
+        width: 50%;
+        top: -450px;
+        right: 10px;
+        z-index: 1;
+        opacity: 0.2;
+    }
+    .hude .hude {
+        display: none;
+    }
+    .hude .sp_hude {
+        display: block;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+    .jam,
+    .design_copy,
+    .support {
+        display: none;
+    }
+
+    .btn01_eye {
+        display: block;
+        width: 143px;
+        padding-top: 40px;
+        padding-right: 50px;
+        margin: 0 auto;
+    }
+}
+/* ここからSKILLS */
+#skills {
+    /* margin-top: -500px; */
+    padding-bottom: 30px;
+}
+
+.bird01 .bird01 {
+    display: block;
+    margin: 0 auto -500px;
+}
+
+.sp_bird02 {
+    display: none;
+}
+/* またbackgroundが中途半端になってしまう・・・ 
+*/
+.skills_wrap {
+    background: #e6f4f8;
+    margin-top: 250px;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+#skills .skills_title_pc {
+    position: relative;
+    top: 440px;
+    left: 480px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.skills_title_sp {
+    display: none;
+}
+.skills {
+    display: flex;
+    padding-top: 300px;
+    justify-content: center;
+}
+/* Design */
+.design_contents {
+    padding-right: 50px;
+}
+
+.design_icon img {
+    /* width: 60%; */
+    padding-top: 0;
+    padding-left: 40px;
+}
+
+.icon_design img {
+    padding-top: 70px;
+}
+
+.text_design {
+    padding-top: 60px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.coding_contents {
+    padding-left: 50px;
+}
+
+.coding img {
+    padding-left: 60px;
+}
+
+.icon_coding {
+    padding-top: 70px;
+}
+
+.text_coding {
+    padding-top: 60px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+@media screen and (max-width: 1040px) {
+    #skills {
+        margin-top: -400px;
+    }
+    .bird01 .bird01 {
+        display: none;
+        margin: 0 auto;
+    }
+
+    .sp_bird02 {
+        position: absolute;
+        display: block;
+        right: 50px;
+        margin-top: -100px;
+    }
+
+    #skills h2 {
+        position: relative;
+        top: 50px;
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        z-index: 2;
+    }
+    #skills .skills_title_pc {
+        display: none;
+    }
+
+    .skills_title_sp {
+        /* サイズ大きくしたいが変わらない＞＜ */
+        position: relative;
+        display: block;
+        top: 330px;
+        left: 20px;
+    }
+
+    .skills {
+        display: block;
+        padding-top: 200px;
+        margin: 0 auto;
+    }
+    .design_contents {
+        display: block;
+        padding-right: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .design_icon img {
+        display: block;
+        margin: 0px auto;
+        width: 30vw;
+        padding-right: 30px;
+    }
+    .icon_design {
+        margin-top: -30px;
+    }
+    .text_design {
+        display: inline-block;
+        width: 305px;
+        text-align: left;
+        margin-top: -30px;
+    }
+    .text_design br {
+        display: none;
+    }
+    /* コーディング */
+
+    .coding_contents {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+    .coding img {
+        display: block;
+        margin: 100px auto 0;
+        width: 30vw;
+        padding-right: 50px;
+    }
+    .icon_coding {
+        margin-top: -30px;
+        justify-content: center;
+    }
+    .text_coding {
+        display: inline-block;
+        width: 305px;
+        text-align: left;
+        margin-top: -30px;
+    }
+    .text_coding br {
+        display: none;
+    }
+}
+
+/* ここからWORKS */
+.bird02 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.sp_bird03 {
+    display: none;
+}
+
+.title_works {
+    position: absolute;
+    top: 0;
+    right: 380px;
+}
+
+.haikei_tree01 {
+    position: relative;
+    width: 890px;
+    margin: 0 auto;
+}
+.works {
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 13px;
+}
+.blueberry_works {
+    position: absolute;
+    top: 30px;
+    right: -80px;
+    width: 90px;
+    transform: rotate(-7deg);
+}
+/* .blueberry_works img { */
+/* position: absolute; */
+/* right: 0px; */
+/* top: 50px; */
+
+/* } */
+#works h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.dotted {
+    width: 30px;
+    margin: 0 auto;
+    padding-top: 8px;
+}
+.works_top {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -650px;
+}
+.pc_works,
+.sp_works {
+    display: flex;
+}
+
+.workshop img {
+    width: 363px;
+}
+
+.btn02_eye {
+    position: relative;
+    top: -50px;
+    margin: 0px auto;
+    width: 170px;
+}
+
+.btn {
+    display: block;
+    height: 100%;
+}
+.btn:hover {
+    opacity: 1;
+}
+.btn .btn-on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.btn:hover .btn-off {
+    opacity: 0;
+    transition: 0.3s;
+}
+.btn:hover .btn-on {
+    opacity: 1;
+}
+@media screen and (max-width: 767px) {
+    .works_top {
+        position: relative;
+        top: -200px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0px auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    .bird02 {
+        padding: 0;
+    }
+    .bird02 .bird02 {
+        display: none;
+    }
+    .sp_bird03 {
+        position: relative;
+        display: block;
+        left: 20px;
+    }
+    .title_works {
+        left: 0;
+        right: 0;
+        font-family: "fot-matisse-pron", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        margin: auto;
+    }
+    .haikei_tree01 {
+        width: 96%;
+    }
+
+    .tree {
+        margin-top: 150px;
+        width: 100%;
+    }
+    .works_top {
+        position: relative;
+        width: 100vw;
+        top: -150px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0px auto;
+    }
+    .pc_works {
+        display: block;
+        width: 250px;
+    }
+    .pc_works img {
+        margin: 0px auto 0;
+    }
+    .sp_works {
+        display: none;
+    }
+    .blueberry_works {
+        right: 0;
+        left: 0;
+        margin: auto;
+        padding-left: 230px;
+        width: 90px;
+    }
+    .btn02_eye {
+        position: relative;
+        top: -250px;
+    }
+}
+/* ここからCONTACT */
+#contact {
+    margin: 0 auto;
+}
+
+.bird03 .bird03 {
+    position: relative;
+    padding-top: 40px;
+    left: 20%;
+    margin: 0px auto;
+    z-index: 2;
+}
+.sp_bird04 {
+    display: none;
+}
+.circle {
+    /* SPの時はborder:none;でこの線は消える */
+    display: flex;
+    /* flexとflex-directionセットで使うと縦揃う方法もあるよ*/
+    position: relative;
+    flex-direction: column;
+    /* ↑売れると縦に組める、横に並んでいるものを縦にする 。
+    　テキストと、ボタンを円の中央に置く発送なので、縦並びにする。*/
+    justify-content: center;
+    background: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(179, 179, 191, 0.5);
+    /*  rgba(179, 179, 191, 0.5)=aを追加すると透明度を指定できる*/
+    border-radius: 50%;
+    max-width: 900px;
+    width: 90vw;
+    /* デバイスの横に対して何％かを表すvw 
+       %は親要素の幅を基準にするもの*/
+    height: 90vw;
+    max-height: 900px;
+    opacity: 100%;
+    margin: -160px auto 200px;
+    /* margin-bottom: 200px; */
+    /* margin-top: -150px; */
+}
+.dotted_circle {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    background: none;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 5px dotted #b3b3bf;
+    width: 870px;
+    height: 870px;
+    opacity: 50%;
+}
+.contact_text {
+    max-width: 100%;
+    font-size: 18px;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 2px;
+    padding-top: 200px;
+}
+
+/* このブルーベリーが、上に上がらない。
+他の要素も全部上に上がってしまう！！ */
+.top_contact_berry img {
+    position: absolute;
+    top: 300px;
+    left: 650px;
+    width: 30vw;
+    text-align: center;
+}
+
+.top_btn_contact {
+    position: relative;
+    padding: 70px;
+    z-index: 1;
+}
+.btn_contact {
+    display: block;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    padding: 30px 20px;
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background: #e4ead7;
+    border-radius: 42px;
+    margin: 0px auto;
+}
+.btn_contact:hover {
+    display: block;
+    border: 2px solid #e4ead7;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    padding: 30px 20px;
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background: white;
+    border-radius: 42px;
+    margin: 0px auto;
+}
+.sp_contact_text {
+    display: none;
+}
+/* ちょっとレスポンシブ対応できるかやってみたがごちゃごちゃに・・・意味なし。 */
+@media screen and (max-width: 1040px) {
+    #contact {
+        margin: 100px auto;
+    }
+    .bird03 .bird03 {
+        display: none;
+    }
+    .sp_bird04 {
+        position: relative;
+        display: block;
+        margin-top: 50px;
+        left: 20%;
+        padding-bottom: 80px;
+    }
+    .circle {
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 3px dotted #b3b3bf;
+        width: 380px;
+        height: 380px;
+    }
+    .contact_text {
+        display: none;
+    }
+    .sp_contact_text {
+        display: block;
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: 1.5px;
+        width: 232px;
+        flex-wrap: wrap;
+        margin: 100px auto 0;
+        text-align: center;
+    }
+    .dotted_circle {
+        display: none;
+    }
+
+    .top_contact_berry img {
+        position: absolute;
+        top: 200px;
+        left: 250px;
+    }
+    .top_btn_contact {
+        padding: 30px;
+    }
+    .btn_contact {
+        display: block;
+        width: 113px;
+        height: 51px;
+        padding: 19px 10px;
+        font-size: 13px;
+    }
+    .btn_contact:hover {
+        display: block;
+        width: 113px;
+        height: 51px;
+        padding: 19px 10px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #contact {
+        margin: -200px auto 0;
+    }
+} /* ここからfooter */
+
+.footer_sky {
+    /* padding-top: 100px;→フッターで指定しない。上の要素で指定すること */
+    max-width: 100%;
+    /* なんか、右の余白ができてしまう・・・ 
+    　　他のエリアではみ出している層があっただけ*/
+    width: 100%;
+    height: 246px;
+    margin: 0 auto;
+}
+.footer_sky img {
+    width: 100%;
+    height: 100%;
+}
+.sp_footer_sky {
+    display: none;
+}
+.nav_footer_PC ul {
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+    padding-left: 20px;
+}
+.nav_footer_PC ul li {
+    padding-left: 40px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.Minori {
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.top_btn {
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 100px;
+    animation: spin 5.5s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.top_btn img {
+    width: 100%;
+    transition: 0.3s;
+}
+@media screen and (max-width: 1040px) {
+    .pc_footer_sky {
+        display: none;
+    }
+    .footer_sky {
+        height: 375px;
+    }
+    .sp_footer_sky {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .nav_footer_PC ul {
+        position: relative;
+        display: block;
+        justify-content: left;
+        margin-top: -375px;
+        padding-left: 0px;
+        z-index: 1;
+        width: 100%;
+    }
+    .nav_footer_PC ul li {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 50px;
+        border-bottom: 5px dotted #fff;
+    }
+    .nav_footer_PC a {
+        display: block;
+    }
+
+    .top_btn {
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+        width: 50px;
+        /* right: 0; */
+        /* top: -120px; */
+    }
+    .Minori {
+        font-size: 10px;
+        margin-top: -70px;
+    }
+}

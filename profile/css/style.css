@@ -1,0 +1,1224 @@
+@charset "utf-8";
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #666666;
+    font-family: "筑紫A丸ゴシック", "FOT-マティス ProN M",
+        "Savoye LET Plain:1.0", "メイリオ", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", sans-serif;
+    font-feature-settings: "palt";
+    /* 上のやつは字幅メトリクスで指定 */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+    /*  */
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* ここから課題 */
+
+/* スマホ版のcssスタート ：pcとspを出し分ける*/
+/* スマホ版メニューは消す */
+.sp_nav,
+.sp_btn {
+    display: none;
+    /* まずはpc版で非表示にしておく */
+}
+
+/* HEADER */
+
+body {
+    background-color: white;
+}
+
+.wrap {
+    display: flex;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5% 3px 3%;
+}
+h1 {
+    max-width: 150px;
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 5px;
+    opacity: 0.7;
+}
+.nav_PC ul {
+    display: flex;
+    max-width: 100%;
+    padding-top: 15px;
+    align-items: center;
+}
+.nav_PC ul li {
+    font-size: 17px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #808080;
+    padding-left: 52px;
+}
+
+.nav_PC :last-child {
+    padding-bottom: 5px;
+    max-width: none;
+}
+.insta {
+    display: none;
+}
+
+/* @media screen and (max-width: 1040px) { */
+/* .nav_PC { */
+/* max-width: 30%; */
+/* } */
+/* h1 { */
+/* width: 50%; */
+/* } */
+/* } */
+@media screen and (max-width: 1040px) {
+    /* ヘッダーのロゴが変わリ始める瞬間を、SP版に切り替えるタイミングにする */
+    .nav_PC {
+        display: none;
+    }
+
+    .sp_btn {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 99;
+        /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
+    }
+    /* 1本線作る */
+    .sp_btn span {
+        position: relative;
+        /* relative入ったタグが基準になる！（親要素にかける） */
+        /* relativeとtopなど組み合わせると
+        　棒線を好きなところに移動できる */
+        top: 10px;
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        /* 四角形の高さ低くして棒のように見せている */
+        transition: 0.3s;
+        /* これを入れると❌になるまでの過程をモーションで見ることができる
+        おしゃれ！全バッテンに追加*/
+    }
+    /* 擬似要素before・afterと「content: "";」追加
+    　　*/
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        /* absolute使う時には、親要素にrelativeを入れないといけない。
+        　　relativeが入った要素を基準に移動することになる */
+        content: "";
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        transition: 0.3s;
+    }
+    .sp_btn span::before {
+        bottom: 10px;
+        width: 25px;
+        /* 真ん中の線から下に10px */
+    }
+    .sp_btn span::after {
+        top: 10px;
+        width: 25px;
+        /* 真ん中の線から上に10px */
+    }
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    h1 {
+        width: 20vw;
+    }
+    .insta {
+        position: absolute;
+        top: 5px;
+        right: 80px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+        padding: 1%;
+    }
+}
+/* メインビジュアル */
+
+.profile_main {
+    height: 750px;
+}
+.TOP_sky {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile_mark {
+    text-align: start;
+    margin-top: -530px;
+    width: 397px;
+
+    padding-left: 106px;
+}
+.profile_mark img {
+    width: 100%;
+    display: block; /* 追加 */
+    margin: 0 auto; /* 追加 */
+}
+
+.main_copy {
+    position: absolute;
+    top: 550px;
+    right: 0;
+    left: 0;
+    text-align: right;
+    padding-right: 100px;
+    /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+}
+.copy {
+    font-size: 25px;
+    color: #818181;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+.scroll {
+    width: 2px;
+    margin: 135px auto;
+}
+
+.Top_sky_sp {
+    display: none;
+}
+
+@media screen and (max-width: 1040px) {
+    .profile_main {
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .TOP_sky {
+        display: none;
+    }
+    .Top_sky_sp {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .profile_mark {
+        margin: -360px auto 0;
+        padding-left: 0px;
+        width: 100%;
+    }
+    .profile_mark img {
+        max-width: 200px;
+        width: 100%;
+        padding-left: 17px;
+    }
+    .main_copy {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 370px;
+        display: block;
+        text-align: center;
+
+        /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+    }
+    .copy {
+        writing-mode: horizontal-tb;
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 1.75;
+        margin-left: 60px;
+        width: 100%;
+    }
+    .scroll {
+        width: 2px;
+        height: 30px;
+        margin: 145px auto 0px;
+    }
+}
+
+/* ここからAbout me */
+#Aboutme {
+    position: relative;
+    padding-top: 300px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* .profile{ */
+
+/* } */
+.profile {
+    max-width: 100%;
+    padding: 30px;
+}
+
+.who_pc {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.who_sp {
+    display: none;
+}
+#Aboutme h2 {
+    font-size: 30px;
+    font-weight: lighter;
+    padding-top: 10px;
+}
+#Aboutme h2 span {
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.job {
+    font-size: 16px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+
+.aboutme {
+    font-size: 16px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 40px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+.aboutme span {
+    letter-spacing: 0.5px;
+}
+.motto img {
+    padding-top: 40px;
+    width: 70px;
+}
+.motto p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+}
+
+.motto p span {
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.love img {
+    padding-top: 40px;
+    max-width: 281px;
+    width: 70px;
+}
+.love p {
+    width: 100%;
+    font-size: 16px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    padding-top: 5px;
+}
+
+.profile_photo {
+    position: absolute;
+    top: 190px;
+    right: -20px;
+    width: 50%;
+}
+
+.hude {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    top: 130px;
+    left: -30px;
+
+    z-index: -1;
+}
+
+#Aboutme .blueberry {
+    position: absolute;
+    top: 310px;
+    right: -50px;
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.characters {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    padding-top: 150px;
+    justify-content: space-around;
+    padding-bottom: 100px;
+}
+
+.characters h3 {
+    width: 233px;
+}
+.strengths {
+    padding-right: 30px;
+}
+.character {
+    padding-right: 30px;
+}
+ul {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+li {
+    line-height: 1.5;
+}
+
+.dotted_line01 {
+    width: 234px;
+}
+.dotted_line02 {
+    width: 234px;
+}
+.dotted_line03 {
+    width: 234px;
+}
+
+.skills p {
+    font-size: 10px;
+    margin-left: 20px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1040px) {
+    #Aboutme {
+        padding-top: 150px;
+    }
+
+    .profile {
+        padding: 50px;
+        padding-left: 15%;
+    }
+    .who_pc {
+        display: none;
+    }
+    .who_sp {
+        display: block;
+        padding-top: 70px;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    #Aboutme h2 {
+        font-size: 20px;
+    }
+
+    .job {
+        font-size: 16px;
+    }
+    .aboutme {
+        font-size: 16px;
+        padding-top: 240px;
+        text-align: center;
+    }
+    .motto img {
+        display: block;
+        padding-top: 40px;
+        width: 70px;
+        margin: 0 auto;
+    }
+    .motto p {
+        font-size: 16px;
+        letter-spacing: 1px;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    .motto p span {
+        font-family: "fot-matisse-pron", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.5;
+    }
+
+    .love img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 40px;
+        max-width: 281px;
+        width: 70px;
+    }
+    .love p {
+        width: 100%;
+        font-size: 16px;
+        font-family: "fot-matisse-pron", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        padding-top: 5px;
+        text-align: center;
+    }
+    .profile_photo {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        left: 5%;
+        width: 30vw;
+        margin: 0 auto;
+        padding-left: 200px;
+    }
+    .hude {
+        position: absolute;
+        width: 40vw;
+        top: 100px;
+        left: 0;
+        right: 5%;
+        z-index: -1;
+        margin: 0 auto;
+        padding-right: 200px;
+    }
+    #Aboutme .blueberry {
+        top: 180px;
+        width: 15vw;
+        right: 15%;
+    }
+}
+@media screen and (max-width: 767px) {
+    #Aboutme .blueberry {
+        top: 350px;
+        right: 5%;
+    }
+    .profile {
+        padding: 50px;
+        padding-left: 10%;
+    }
+
+    .who_sp {
+        padding-top: 30px;
+        padding-left: 0;
+        font-size: 10px;
+    }
+    .aboutme {
+        padding-top: 140px;
+    }
+    #Aboutme h2 {
+        font-size: 16px;
+        padding-left: 0;
+    }
+    .job {
+        padding-left: 0;
+        font-size: 12px;
+    }
+    .motto {
+        padding-top: 30px;
+    }
+    .characters {
+        display: block;
+        max-width: 235px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .characters h3 {
+        width: 235px;
+    }
+    ul {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    li {
+        font-size: 15px;
+    }
+
+    .strengths {
+        padding-bottom: 30px;
+    }
+    .character {
+        padding-bottom: 30px;
+    }
+    .profile_photo {
+        top: 100px;
+        width: 58vw;
+        padding-left: 150px;
+    }
+    .hude {
+        position: absolute;
+        width: 60vw;
+        top: 100px;
+        left: 0;
+        right: 40%;
+        z-index: -1;
+        margin: 0 auto;
+        padding-right: 0px;
+    }
+}
+/* ここからキャリア */
+
+#career {
+    position: relative;
+    padding-top: 200px;
+    margin: 0 auto;
+}
+
+.career_bird {
+    position: absolute;
+    right: 100px;
+    margin-top: -80px;
+}
+#career h2 {
+    padding-left: 5%;
+}
+#career h2 img {
+    width: 10vw;
+}
+
+.career {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#career .text {
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    max-width: 740px;
+    width: 100%;
+    padding-left: 100px;
+}
+.first {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 50px;
+    padding-top: 100px;
+}
+.FIRST img {
+    width: 145px;
+    padding-right: 50px;
+}
+
+.second {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 50px;
+}
+.SECOND img {
+    width: 145px;
+    padding-right: 50px;
+}
+.third {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 50px;
+}
+.THIRD img {
+    width: 145px;
+    padding-right: 50px;
+}
+
+.haikei_career {
+    position: relative;
+    max-width: 500px;
+    width: 80%;
+    top: -650px;
+    right: 150px;
+    margin-left: 20px;
+}
+@media screen and (max-width: 1040px) {
+    #career {
+        position: relative;
+        padding-top: 0px;
+        padding-bottom: 100px;
+        margin: 0px auto;
+    }
+
+    .career_bird {
+        width: 90px;
+    }
+    #career h2 {
+        padding-left: 8%;
+    }
+    #career h2 img {
+        width: 20vw;
+    }
+
+    .career {
+        max-width: 415px;
+        margin: 0 auto;
+    }
+
+    #career .text {
+        font-size: 15px;
+        letter-spacing: 3px;
+        line-height: 1.75;
+        max-width: 740px;
+        width: 100%;
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+    .first {
+        display: block;
+        justify-content: start;
+        align-items: center;
+        padding-top: 80px;
+    }
+    .FIRST img {
+        width: 74px;
+        padding-right: 50px;
+    }
+
+    .second {
+        display: block;
+        justify-content: start;
+        align-items: center;
+        padding-top: 40px;
+    }
+    .SECOND img {
+        width: 74px;
+        padding-right: 50px;
+    }
+    .third {
+        display: block;
+        justify-content: start;
+        align-items: center;
+        padding-top: 40px;
+    }
+    .THIRD img {
+        width: 74px;
+        padding-right: 50px;
+    }
+
+    .haikei_career {
+        position: relative;
+        max-width: 500px;
+        width: 40vw;
+        /* top: -650px; */
+        right: 0px;
+        top: -220px;
+        margin-left: 20px;
+    }
+}
+/* ここからVISION */
+#vision {
+    background: #e6f4f8;
+    padding-top: 70px;
+    padding-bottom: 200px;
+    margin: -300px auto 0;
+}
+
+.vision {
+    width: 10vw;
+    padding-left: 220px;
+}
+
+.pc_vision {
+    display: block;
+    max-width: 770px;
+    width: 90%;
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 2;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px;
+    margin: 0 auto;
+}
+
+.berry_ashirai {
+    width: 30%;
+    text-align: right;
+    padding-left: 800px;
+    padding-bottom: 100px;
+}
+.sp_vision {
+    display: none;
+}
+
+.readmore {
+    display: none;
+}
+/* このブドウ動かない */
+@media screen and (max-width: 1040px) {
+    #vision {
+        background: #e6f4f8;
+        padding-bottom: 80px;
+        margin-bottom: 0px;
+    }
+    .pc_vision {
+        display: none;
+    }
+    .vision {
+        width: 20vw;
+        padding-left: 45px;
+    }
+
+    .sp_vision {
+        display: block;
+        max-width: 320px;
+        font-size: 15px;
+        width: 90%;
+        font-size: 18px;
+        letter-spacing: 2.5px;
+        line-height: 2;
+        justify-content: center;
+        text-align: center;
+        padding-top: 70px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .berry_ashirai {
+        position: relative;
+        width: 30%;
+        left: -520px;
+        top: -50px;
+    }
+    .readmore {
+        display: block;
+        position: relative;
+        margin: 50px auto 0;
+        padding: 0 0 75px;
+    }
+    .readmore img {
+        width: 105px;
+    }
+    .readmore label {
+        display: block;
+        /* margin: 0 auto; */
+        /* width: 270px; */
+        padding: 20px 0;
+        text-align: center;
+        /* 画像を動かさないといけないので、displayblockとtext-aline:centerだけあればOK */
+        cursor: pointer;
+    }
+}
+/* .readmore label img {
+        width: 105px;
+    } */
+
+/* .readmore input[type="checkbox"] {
+        display: none;
+    } */
+
+/* .readmore-content {
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+    } */
+/* .readmore-content::before {
+        /* 同じ色の板を作って、次にafterで点線を作る */
+/* content: "";
+        position: absolute;
+        bottom: 0;
+        /* bottomのが距離近いので今回はbottom */
+/* left: 0;
+        display: block;
+        width: 100%;
+        height: 60px;
+        background: #e6f4f8;
+    /* } */
+*/ */ */
+
+    /* .readmore-content::before {
+      
+        content: "";
+        position: absolute;
+        bottom: 0;
+      
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 70px;
+        background: #e6f4f8;
+    } */
+
+    /* .readmore-content::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+       
+        left: 49%;
+        right: 51%;
+        border-right: 2px dotted rgb(138, 137, 137);
+        width: 3px;
+        height: 30px;
+    } */
+    /* .readmore label img.open {
+        display: none;
+    }
+    .readmore input[type="checkbox"]:checked ~ .readmore-content {
+        height: auto;
+    } */
+
+    /* .readmore input[type="checkbox"]:checked ~ .readmore-content::before {
+     
+        display: none;
+    }
+    .readmore input[type="checkbox"]:checked ~ .readmore-content::after {
+       
+        display: none;
+    }
+    .readmore input[type="checkbox"]:checked + .readmore_btn img {
+        
+        display: none;
+    } */
+
+/* ここからCONTACT */
+#works {
+    margin: 0 auto;
+}
+
+.bird03 {
+    position: relative;
+    padding-top: 40px;
+    padding-left: 220px;
+    margin: 0px auto;
+    z-index: 2;
+}
+
+.circle {
+    /* SPの時はborder:none;でこの線は消える */
+    display: flex;
+    /* flexとflex-directionセットで使うと縦揃う方法もあるよ*/
+    position: relative;
+    flex-direction: column;
+    /* ↑売れると縦に組める、横に並んでいるものを縦にする 。
+    　テキストと、ボタンを円の中央に置く発送なので、縦並びにする。*/
+    justify-content: center;
+    background: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(179, 179, 191, 0.5);
+    /*  rgba(179, 179, 191, 0.5)=aを追加すると透明度を指定できる*/
+    border-radius: 50%;
+    max-width: 900px;
+    width: 90vw;
+    /* デバイスの横に対して何％かを表すvw 
+       %は親要素の幅を基準にするもの*/
+    height: 90vw;
+    max-height: 900px;
+    opacity: 100%;
+    margin: -160px auto 100px;
+    /* margin-bottom: 200px; */
+    /* margin-top: -150px; */
+}
+.dotted_circle {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    background: none;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 5px dotted #b3b3bf;
+    width: 870px;
+    height: 870px;
+    opacity: 50%;
+}
+.contact_text {
+    max-width: 100%;
+    font-size: 18px;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 2px;
+    padding-top: 200px;
+}
+
+/* このブルーベリーが、上に上がらない。
+他の要素も全部上に上がってしまう！！ */
+.top_contact_berry {
+    position: absolute;
+    top: 420px;
+    right: -60px;
+    width: 310px;
+    text-align: center;
+}
+
+.top_btn_contact {
+    position: relative;
+    padding: 70px;
+    z-index: 1;
+}
+.btn_contact {
+    display: block;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    padding: 30px 20px;
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background: #e4ead7;
+    border-radius: 42px;
+    margin: 0px auto;
+}
+.btn_contact:hover {
+    display: block;
+    border: 2px solid #e4ead7;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    padding: 30px 20px;
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background: white;
+    border-radius: 42px;
+    margin: 0px auto;
+}
+.sp_bird04 {
+    display: none;
+}
+.sp_contact_text {
+    display: none;
+}
+/* ちょっとレスポンシブ対応できるかやってみたがごちゃごちゃに・・・意味なし。 */
+@media screen and (max-width: 1040px) {
+    .bird03 .bird03 {
+        display: none;
+    }
+
+    .bird03 {
+        padding-left: 0px;
+    }
+    .sp_bird04 {
+        display: block;
+        padding-bottom: 80px;
+        padding-left: 50px;
+    }
+    .circle {
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 3px dotted #b3b3bf;
+        width: 380px;
+        height: 380px;
+        margin-bottom: 100px;
+    }
+    .contact_text {
+        display: none;
+    }
+    .sp_contact_text {
+        display: block;
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: 1.5px;
+        width: 232px;
+        flex-wrap: wrap;
+        margin: 100px auto 0;
+        text-align: center;
+    }
+    .dotted_circle {
+        display: none;
+    }
+    .top_contact_berry {
+        right: 0;
+    }
+    .top_contact_berry img {
+        position: absolute;
+        width: 116px;
+        top: -220px;
+        left: 200px;
+    }
+    .top_btn_contact {
+        padding: 30px;
+    }
+    .btn_contact {
+        display: block;
+        width: 113px;
+        height: 51px;
+        padding: 19px 10px;
+        font-size: 13px;
+    }
+    .btn_contact:hover {
+        display: block;
+        width: 113px;
+        height: 51px;
+        padding: 19px 10px;
+        font-size: 13px;
+    }
+}
+
+/* ここからfooter */
+
+.footer_sky {
+    /* padding-top: 100px;→フッターで指定しない。上の要素で指定すること */
+    max-width: 100%;
+    /* なんか、右の余白ができてしまう・・・ 
+    　　他のエリアではみ出している層があっただけ*/
+    width: 100%;
+    height: 246px;
+    margin: 0 auto;
+}
+.footer_sky img {
+    width: 100%;
+    height: 100%;
+}
+.sp_footer_sky {
+    display: none;
+}
+.nav_footer_PC ul {
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+    padding-left: 20px;
+}
+.nav_footer_PC ul li {
+    padding-left: 40px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.Minori {
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.top_btn {
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 100px;
+    animation: spin 5.5s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.top_btn img {
+    width: 100%;
+    transition: 0.3s;
+}
+@media screen and (max-width: 1040px) {
+    .pc_footer_sky {
+        display: none;
+    }
+    .footer_sky {
+        height: 375px;
+    }
+    .sp_footer_sky {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .nav_footer_PC ul {
+        position: relative;
+        display: block;
+        justify-content: left;
+        margin-top: -375px;
+        padding-left: 0px;
+        z-index: 1;
+        width: 100%;
+    }
+    .nav_footer_PC ul li {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 50px;
+        border-bottom: 5px dotted #fff;
+    }
+    .nav_footer_PC a {
+        display: block;
+    }
+
+    .top_btn {
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+        width: 50px;
+        z-index: 99 !important;
+        /* right: 0; */
+        /* top: -120px; */
+    }
+    .Minori {
+        font-size: 10px;
+        margin-top: -70px;
+    }
+}
+
+/* 制作実績０１ */

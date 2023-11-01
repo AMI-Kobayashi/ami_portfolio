@@ -1,0 +1,593 @@
+@charset "utf-8";
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #666666;
+    font-family: "筑紫A丸ゴシック", "FOT-マティス ProN M",
+        "Savoye LET Plain:1.0", "メイリオ", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", sans-serif;
+    font-feature-settings: "palt";
+    /* 上のやつは字幅メトリクスで指定 */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+    /*  */
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* ここから課題 */
+
+/* スマホ版のcssスタート ：pcとspを出し分ける*/
+/* スマホ版メニューは消す */
+.sp_nav,
+.sp_btn {
+    display: none;
+    /* まずはpc版で非表示にしておく */
+}
+
+/* HEADER */
+
+body {
+    background-color: white;
+}
+
+.wrap {
+    display: flex;
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5% 3px 3%;
+}
+h1 {
+    max-width: 150px;
+    width: 100%;
+    padding-left: 10%;
+    opacity: 70%;
+}
+.nav_PC ul {
+    display: flex;
+    max-width: 100%;
+    padding-top: 15px;
+    align-items: center;
+}
+.nav_PC ul li {
+    font-size: 17px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #808090;
+    padding-left: 52px;
+    letter-spacing: 1.5px;
+}
+
+.nav_PC :last-child {
+    padding-bottom: 5px;
+    max-width: none;
+}
+.insta {
+    display: none;
+}
+@media screen and (max-width: 1040px) {
+    /* ヘッダーのロゴが変わリ始める瞬間を、SP版に切り替えるタイミングにする */
+    .nav_PC {
+        display: none;
+    }
+
+    .sp_btn {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 99;
+        padding: 1%;
+        /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
+    }
+    /* 1本線作る */
+    .sp_btn span {
+        position: relative;
+        /* relative入ったタグが基準になる！（親要素にかける） */
+        /* relativeとtopなど組み合わせると
+        　棒線を好きなところに移動できる */
+        top: 10px;
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        /* 四角形の高さ低くして棒のように見せている */
+        transition: 0.3s;
+        /* これを入れると❌になるまでの過程をモーションで見ることができる
+        おしゃれ！全バッテンに追加*/
+    }
+    /* 擬似要素before・afterと「content: "";」追加
+    　　*/
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        /* absolute使う時には、親要素にrelativeを入れないといけない。
+        　　relativeが入った要素を基準に移動することになる */
+        content: "";
+        display: block;
+        width: 35px;
+        height: 2px;
+        border-radius: 2px;
+        background: #959595;
+        transition: 0.3s;
+    }
+    .sp_btn span::before {
+        bottom: 10px;
+        width: 25px;
+        /* 真ん中の線から下に10px */
+    }
+    .sp_btn span::after {
+        top: 10px;
+        width: 25px;
+        /* 真ん中の線から上に10px */
+    }
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    h1 {
+        width: 20vw;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .insta {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+        padding: 1%;
+    }
+}
+
+/* @media screen and (max-width: 1040px) { */
+/* .nav_PC { */
+/* max-width: 30%; */
+/* } */
+/* h1 { */
+/* width: 50%; */
+/* } */
+/* } */
+
+/* メインビジュアル */
+.contact_main {
+    height: 750px;
+}
+.TOP_sky {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact_mark {
+    text-align: start;
+    margin-top: -530px;
+    width: 50%;
+    padding-left: 106px;
+}
+.contact_mark img {
+    width: 397px;
+    /* Ami Kobayahshiのマークについて
+    これはちゃんとレスポンシブになっているのかしら💦 */
+}
+
+.main_copy {
+    position: absolute;
+    right: 0;
+    top: 550px;
+    padding-right: 100px;
+    /* padding-top: 230px; */
+
+    /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+}
+.copy {
+    font-size: 25px;
+    color: #818181;
+    letter-spacing: 3px;
+    line-height: 2;
+    text-align: right;
+}
+.scroll {
+    width: 2px;
+    margin: 173px auto;
+}
+.Top_sky_sp {
+    display: none;
+}
+.insta {
+    display: none;
+}
+@media screen and (max-width: 1040px) {
+    .contact_main {
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .TOP_sky {
+        display: none;
+    }
+    .Top_sky_sp {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .contact_mark {
+        text-align: start;
+        margin-top: -350px;
+        width: 100%;
+        padding-left: 0px;
+    }
+    .contact_mark img {
+        width: 230px;
+        padding-left: 100px;
+    }
+    .main_copy {
+        position: absolute;
+        top: 380px;
+        display: block;
+        text-align: center;
+        width: 200px;
+    }
+    .copy {
+        writing-mode: horizontal-tb;
+        font-size: 15px;
+        letter-spacing: 2px;
+
+        width: 100%;
+    }
+    .scroll {
+        width: 2px;
+        height: 30px;
+        margin: 130px auto 0px;
+    }
+    .insta {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+}
+/* ここからと合わせフォーム */
+.introduction {
+    text-align: center;
+    padding-bottom: 100px;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+.bird {
+    padding-left: 70px;
+    padding-top: 100px;
+    margin-bottom: -100px;
+}
+.form {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 150px;
+    margin-bottom: -400px;
+}
+#form {
+    position: relative;
+    margin: 0 auto;
+
+    /* margin-left: -30px; */
+}
+.form-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.form-group {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.form label {
+    width: 20%;
+    text-align: right;
+    padding-right: 30px;
+}
+.form .form-group:last-of-type {
+    /* 効かないな・・・！？ */
+    align-items: flex-start;
+}
+.form input,
+.form textarea {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #808090;
+    border-radius: 3px;
+}
+
+.form textarea {
+    height: 415px;
+}
+
+button {
+    display: block;
+    text-decoration: none;
+    margin: 100px auto;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    cursor: pointer;
+    text-align: center;
+    background: #e4ead7;
+    border-radius: 42px;
+    border: none;
+}
+
+button:hover {
+    display: block;
+    border: 2px solid #e4ead7;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 185px;
+    height: 84px;
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background: white;
+    border-radius: 42px;
+    transition: 0.3s;
+}
+button p {
+    font-size: 18pt;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #666666;
+}
+
+.blueberry {
+    position: relative;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: right;
+    padding-right: 10%;
+    opacity: 40%;
+    z-index: 1;
+}
+.blueberry img {
+    width: 40vw;
+    transform: rotate(-10deg);
+}
+@media screen and (max-width: 1040px) {
+    .form {
+        margin-bottom: -200px;
+    }
+    .bird {
+        width: 65px;
+        padding-left: 30px;
+        padding-top: 50px;
+    }
+    br {
+        display: none;
+    }
+    .introduction {
+        display: block;
+        margin: 0 auto;
+        font-size: 15px;
+        max-width: 250px;
+        width: 100%;
+        letter-spacing: 0.25;
+        padding-bottom: 70px;
+        padding-top: 100px;
+    }
+    .form {
+        padding-bottom: 0px;
+    }
+    .form-inner {
+        max-width: 240px;
+        margin: 0 auto;
+        padding-right: 25px;
+    }
+    .form-group {
+        display: block;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    .form label {
+        width: 20%;
+        text-align: start;
+        padding-right: 0px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        letter-spacing: 0.25;
+    }
+    .form input,
+    .form textarea {
+        width: 100%;
+
+        padding: 5px;
+        border: 1px solid #808090;
+        border-radius: 3px;
+        margin-top: 10px;
+    }
+
+    .form textarea {
+        height: 160px;
+    }
+    .blueberry {
+        bottom: 230px;
+        /* left: 150px;
+    width: 230px; */
+        left: 0;
+        right: 0;
+        max-width: 300px;
+    }
+    .blueberry img {
+        width: 50vw;
+        margin: 0 -130px 0px 200px;
+        transform: rotate(-10deg);
+        opacity: 40%;
+    }
+    button {
+        width: 120px;
+        height: 61px;
+    }
+
+    button:hover {
+        width: 120px;
+        height: 61px;
+    }
+    button p {
+        font-size: 12pt;
+    }
+}
+/* フッター */
+.sp_footer_sky {
+    display: none;
+}
+.footer_sky {
+    /* padding-top: 100px;→フッターで指定しない。上の要素で指定すること */
+    max-width: 100%;
+    /* なんか、右の余白ができてしまう・・・ 
+    　　他のエリアではみ出している層があっただけ*/
+    width: 100%;
+    height: 246px;
+    margin: 0 auto;
+}
+.footer_sky img {
+    width: 100%;
+    height: 100%;
+}
+.nav_footer_PC ul {
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+    /* padding-left: 20px; */
+}
+.nav_footer_PC ul li {
+    padding-left: 40px;
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 1.5px;
+}
+.Minori {
+    font-family: "fot-matisse-pron", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.top_btn {
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 100px;
+    /* right: 0; */
+    /* top: -120px; */
+}
+
+@media screen and (max-width: 1040px) {
+    .pc_footer_sky {
+        display: none;
+    }
+    .footer_sky {
+        height: 375px;
+    }
+    .sp_footer_sky {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .nav_footer_PC ul {
+        position: relative;
+        display: block;
+        justify-content: left;
+        margin-top: -375px;
+        padding-left: 0px;
+        z-index: 1;
+        width: 100%;
+    }
+    .nav_footer_PC ul li {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 50px;
+        border-bottom: 5px dotted #fff;
+    }
+    .nav_footer_PC a {
+        width: 100%;
+    }
+
+    .top_btn {
+        position: fixed;
+        right: 70px;
+        bottom: 100px;
+        width: 50px;
+        /* right: 0; */
+        /* top: -120px; */
+    }
+    .Minori {
+        font-size: 10px;
+        margin-top: -70px;
+    }
+}

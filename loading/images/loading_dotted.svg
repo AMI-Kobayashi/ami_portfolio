@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445.33 445.33">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #a6a6b5;
+        stroke-dasharray: 0 0 0 70.33;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 20px;
+      }
+
+      .cls-2 {
+        mix-blend-mode: overlay;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g class="cls-3">
+    <g id="_レイヤー_2" data-name="レイヤー 2">
+      <g id="_ローディング" data-name="ローディング">
+        <g>
+          <circle class="cls-2" cx="222.66" cy="222.66" r="212.66"/>
+          <circle class="cls-1" cx="222.66" cy="222.66" r="212.66"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

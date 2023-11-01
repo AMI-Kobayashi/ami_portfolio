@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.48 21.68">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #666;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #666;
+        font-family: MatisseProN-M-83pv-RKSJ-H, 'FOT-Matisse ProN';
+        font-size: 20px;
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 0 0 5.45;
+      }
+    </style>
+  </defs>
+  <g id="profile">
+    <g id="Strengh_etc" data-name="Strengh etc">
+      <g>
+        <text class="cls-3" transform="translate(0 17.6)"><tspan x="0" y="0">Character</tspan></text>
+        <g>
+          <line class="cls-1" x1="114.48" y1="11.54" x2="114.48" y2="11.54"/>
+          <line class="cls-2" x1="119.94" y1="11.54" x2="231.75" y2="11.54"/>
+          <line class="cls-1" x1="234.48" y1="11.54" x2="234.48" y2="11.54"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

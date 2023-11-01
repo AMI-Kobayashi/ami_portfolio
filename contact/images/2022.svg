@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146.68 71.68">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-linecap: round;
+        stroke-width: 1px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #666;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #666;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-family: TsukuARdGothic-Regular-83pv-RKSJ-H, 'Tsukushi A Round Gothic';
+        font-size: 30px;
+      }
+    </style>
+  </defs>
+  <g id="profile">
+    <g id="Carrer">
+      <g>
+        <text class="cls-2" transform="translate(42.74 47.36)"><tspan x="0" y="0">2022</tspan></text>
+        <g>
+          <g>
+            <path class="cls-1" d="m.5,4.88c.16.17,38.02.29,38.02.29"/>
+            <path class="cls-1" d="m108.17,4.1c.16.16,38.01-.44,38.01-.44"/>
+            <ellipse class="cls-3" cx="74.08" cy="4.46" rx="2.24" ry="3.96"/>
+            <ellipse class="cls-3" cx="82.08" cy="4.46" rx="2" ry="3"/>
+            <ellipse class="cls-3" cx="89.08" cy="4.46" rx="1.5" ry="2.5"/>
+            <ellipse class="cls-3" cx="95.17" cy="4.46" rx="1" ry="1.5"/>
+            <ellipse class="cls-3" cx="65.94" cy="4.46" rx="2" ry="3"/>
+            <ellipse class="cls-3" cx="58.94" cy="4.46" rx="1.5" ry="2.5"/>
+            <ellipse class="cls-3" cx="52.84" cy="4.46" rx="1" ry="1.5"/>
+          </g>
+          <g>
+            <path class="cls-1" d="m.5,67.64c.16.17,38.02.29,38.02.29"/>
+            <path class="cls-1" d="m108.17,66.86c.16.16,38.01-.44,38.01-.44"/>
+            <ellipse class="cls-3" cx="74.08" cy="67.22" rx="2.24" ry="3.96"/>
+            <ellipse class="cls-3" cx="82.08" cy="67.22" rx="2" ry="3"/>
+            <ellipse class="cls-3" cx="89.08" cy="67.22" rx="1.5" ry="2.5"/>
+            <ellipse class="cls-3" cx="95.17" cy="67.22" rx="1" ry="1.5"/>
+            <ellipse class="cls-3" cx="65.94" cy="67.22" rx="2" ry="3"/>
+            <ellipse class="cls-3" cx="58.94" cy="67.22" rx="1.5" ry="2.5"/>
+            <ellipse class="cls-3" cx="52.84" cy="67.22" rx="1" ry="1.5"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
