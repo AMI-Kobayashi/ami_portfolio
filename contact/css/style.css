@@ -479,8 +479,8 @@ button p {
         max-width: 300px;
     }
     .blueberry img {
-        width: 50vw;
-        margin: 0 -130px 0px 200px;
+        width: 40vw;
+        margin: 60px -90px 0px 40px;
         transform: rotate(-10deg);
         opacity: 40%;
     }
