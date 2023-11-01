@@ -607,6 +607,7 @@ section:nth-child(2n) {
     top: 0;
     left: 0;
     width: 170px;
+    z-index: 10;
 }
 
 .btn {
@@ -745,7 +746,6 @@ section:nth-child(2n) {
         padding-top: 40px;
         padding-right: 50px;
         margin: 0 auto;
-        z-index: 10;
     }
     .btn .btn-on {
         position: absolute;
