@@ -484,6 +484,9 @@ dd:first-of-type {
     height: auto;
 }
 @media screen and (max-width: 1040px) {
+    .works02 {
+        top: 0;
+    }
     #works02 {
         top: 0px;
         margin: 0 auto 160px;
