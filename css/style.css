@@ -745,6 +745,15 @@ section:nth-child(2n) {
         padding-top: 40px;
         padding-right: 50px;
         margin: 0 auto;
+        z-index: 10;
+    }
+    .btn .btn-on {
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        opacity: 0;
+        transition: 0.3s;
+        width: 143px;
     }
 }
 /* ここからSKILLS */
