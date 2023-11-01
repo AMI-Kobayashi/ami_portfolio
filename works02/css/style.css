@@ -287,8 +287,37 @@ h1 {
         height: 100%;
         object-fit: cover;
     }
-
+    .works02_mark {
+        margin: -360px auto 0;
+        padding-left: 0px;
+        width: 100%;
+    }
+    .works02_mark img {
+        max-width: 200px;
+        width: 100%;
+        padding-left: 17px;
+    }
     .main_copy {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 370px;
+        display: block;
+        text-align: center;
+
+        /* メインコピーをレスポンシブにするのに、これは位置が固定されてしまう！！
+     そうしたらいい感じに動くようになるのでしょうか・・・ */
+    }
+    .copy {
+        writing-mode: horizontal-tb;
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 1.75;
+        margin-left: 60px;
+        width: 100%;
+    }
+
+    /* .main_copy {
         position: absolute;
         right: 0;
         left: 5%;
@@ -308,13 +337,12 @@ h1 {
         display: block;
         top: 130px;
         /* text-align: center; */
-        padding-top: 0px;
+    /* padding-top: 0px;
         max-width: 230px;
         width: 80%;
         margin: 0 auto;
-    }
-
-    .scroll {
+    } */
+    */ .scroll {
         width: 2px;
         height: 30px;
         margin: -35px auto 0px;
