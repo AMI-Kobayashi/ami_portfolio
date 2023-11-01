@@ -128,7 +128,7 @@ h1 {
         display: block;
         height: 23px;
         cursor: pointer;
-        z-index: 99!;
+        z-index: 99;
         /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
     }
     /* 1本線作る */
@@ -143,10 +143,8 @@ h1 {
         height: 2px;
         border-radius: 2px;
         background: #959595;
-        /* 四角形の高さ低くして棒のように見せている */
+
         transition: 0.3s;
-        /* これを入れると❌になるまでの過程をモーションで見ることができる
-        おしゃれ！全バッテンに追加*/
     }
     /* 擬似要素before・afterと「content: "";」追加
     　　*/
@@ -198,6 +196,11 @@ h1 {
         height: 30px;
         opacity: 1;
         padding: 1%;
+    }
+    .nav-links a,
+    span {
+        border: none;
+        border-radius: 0%;
     }
 }
 
