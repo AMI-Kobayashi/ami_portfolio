@@ -368,7 +368,7 @@ a {
     z-index: 5;
 }
 .SP_salon {
-    width: 300px;
+    display: none;
 }
 .PC {
     width: 460px;
@@ -577,9 +577,6 @@ dd:first-of-type {
     }
     #readmore {
         display: none;
-    }
-    .SP_salon {
-        width: 100%;
     }
 }
 /* フッター */
