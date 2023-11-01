@@ -23,7 +23,7 @@
       var webStorage = function () {
          if (sessionStorage.getItem('access')) {
           //2回目以降アクセス時の処理
-          console.log('display:none');
+          console.log('2回目アクセス');
           $("#container").css("opacity","1");
           $("#splash").css("display", "none");
           $(".splash-logo").css("display", "none");
