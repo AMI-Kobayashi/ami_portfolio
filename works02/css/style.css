@@ -564,11 +564,11 @@ dd:first-of-type {
         font-size: 12px;
     }
     .PC {
-        width: 187px;
+        width: 345px;
     }
 
     .SP {
-        width: 55px;
+        width: 95px;
         padding-left: 50px;
     }
     dl {
@@ -605,6 +605,14 @@ dd:first-of-type {
     }
     #readmore {
         display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .PC {
+        width: 187px;
+    }
+    .SP {
+        width: 55px;
     }
 }
 /* フッター */
