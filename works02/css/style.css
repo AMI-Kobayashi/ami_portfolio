@@ -575,6 +575,9 @@ dd:first-of-type {
         margin: 100px auto 0px;
         z-index: 1;
     }
+    #readmore {
+        display: none;
+    }
 }
 /* フッター */
 .footer_sky {

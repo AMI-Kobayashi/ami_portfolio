@@ -913,9 +913,7 @@ li {
     width: 3px;
     height: 30px;
 }
-.readmore label img.open {
-    display: none;
-}
+
 .readmore input[type="checkbox"]:checked ~ .readmore-content {
     height: auto;
 }
