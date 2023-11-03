@@ -125,11 +125,13 @@ h1 {
 
     .sp_btn {
         position: absolute;
-        top: 28%;
+        top: 1%;
+        bottom: 0;
         right: 10px;
         display: block;
-        height: 23px;
+        height: auto;
         cursor: pointer;
+        padding-top: 5px;
         z-index: 99;
         /* z-indexはレイヤーみたいなもの１２３４の順で１が前面に来るよ */
     }
@@ -192,8 +194,8 @@ h1 {
     }
     .insta {
         position: absolute;
-        top: -4px;
-        right: 80px;
+        top: 0px;
+        right: 55px;
         display: block;
         width: 30px;
         height: 30px;
@@ -551,6 +553,9 @@ li {
         top: 180px;
         width: 15vw;
         right: 15%;
+    }
+    .dodted_line01 {
+        width: 100%;
     }
 }
 @media screen and (max-width: 767px) {
