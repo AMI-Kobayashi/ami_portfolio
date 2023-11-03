@@ -619,7 +619,7 @@ section:nth-child(2n) {
 }
 .btn .btn-on {
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     opacity: 0;
     transition: 0.3s;
