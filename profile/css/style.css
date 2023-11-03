@@ -20,7 +20,6 @@ li {
         "Savoye LET Plain:1.0", "メイリオ", "Hiragino Kaku Gothic ProN",
         "Hiragino Sans", sans-serif;
     font-feature-settings: "palt";
-    /* 上のやつは字幅メトリクスで指定 */
 }
 
 html {
