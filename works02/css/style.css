@@ -687,7 +687,7 @@ dd:first-of-type {
     }
 }
 
-/* .lightbox {
+.lightbox {
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -711,4 +711,4 @@ dd:first-of-type {
     .lightbox .lb-image {
         width: 100% !important;
     }
-} */
+}
