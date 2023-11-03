@@ -271,7 +271,7 @@ section:nth-child(2n) {
 
     .sp_btn {
         position: absolute;
-        top: 0;
+        top: 28%;
         right: 30px;
         display: block;
         height: 23px;
@@ -340,7 +340,7 @@ section:nth-child(2n) {
     .insta {
         position: absolute;
         top: -4px;
-        right: 80px;
+        right: 40px;
         display: block;
         width: 30px;
         height: 30px;
