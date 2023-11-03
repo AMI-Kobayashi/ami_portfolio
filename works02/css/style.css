@@ -474,14 +474,14 @@ dd:first-of-type {
 }
 
 .lb_outerContainer {
-    max-width: 100%;
-    min-width: 500px;
-    height: auto;
+    max-width: 100% !important;
+    min-width: 500px !important;
+    height: auto !important;
 }
 
 .lightbox .lb_image {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
 }
 @media screen and (max-width: 1040px) {
     .works02 {
