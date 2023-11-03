@@ -16,7 +16,7 @@ li {
     line-height: 1;
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #666666;
-    font-family: "筑紫A丸ゴシック", "FOT-マティス ProN M",
+    font-family: "fot-tsukuardgothic-std", sans-serif, "FOT-マティス ProN M",
         "Savoye LET Plain:1.0", "メイリオ", "Hiragino Kaku Gothic ProN",
         "Hiragino Sans", sans-serif;
     font-feature-settings: "palt";

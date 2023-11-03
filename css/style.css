@@ -234,6 +234,7 @@ h1 {
     font-style: normal;
     color: #808080;
     padding-left: 52px;
+    letter-spacing: 1.5px;
 }
 
 .nav_PC :last-child {
