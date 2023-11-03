@@ -124,7 +124,7 @@ h1 {
 
     .sp_btn {
         position: absolute;
-        top: 1%;
+        top: 0;
         bottom: 0;
         right: 10px;
         display: block;
