@@ -927,7 +927,9 @@ li {
 .readmore input[type="checkbox"]:checked ~ .readmore_btn img {
     display: none;
 }
-
+#readmore {
+    display: none;
+}
 /* ここからCONTACT */
 #works {
     margin: 0 auto;
