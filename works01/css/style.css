@@ -370,29 +370,30 @@ h1 {
     /*横幅94%で左右に余白を持たせて中央寄せ*/
     width: 90%;
     margin: 230px auto 100px;
+    z-index: 10;
 }
 .slider li {
     padding: 20px;
 }
 .slider p {
     position: absolute;
-    /* width: 30vw; */
     font-size: 24px;
     color: #808090;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* こちらを追加 */
-    /* 画像の幅の５０％分横縦にずれる（translate) */
     z-index: 6;
 }
-
+.slider li:hover {
+    cursor: pointer;
+}
 .slider img {
     width: 15vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
     height: auto;
     margin: 0 auto;
     /* padding: 20px; */
 }
-.other {
+/* .other {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -410,14 +411,14 @@ h1 {
 }
 .lp {
     /* padding-top: 110px; */
-    /* padding-left: 115px; */
-    letter-spacing: 1.5px;
+/* padding-left: 115px; */
+/* letter-spacing: 1.5px;
 }
 .sns {
     position: absolute;
     left: 50%;
     top: 50%;
-}
+} */
 
 .slider .slick-slide {
     transform: scale(0.8); /*左右の画像のサイズを80%に*/

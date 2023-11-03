@@ -22,33 +22,7 @@
 	});
 
 
-	$(function() {
-		var newsLink = $(".slider li");
-		var limit = 5;
-		$(".other, .website, .sns, lp, all").css('display','none');
-		for(var i = 0 ; i < limit ; i++) {
-			var limitNews = $(".news-content")[i];
-			$(limitNews).fadeIn();
-		}
-		$(newsLink).click(function(){
-			$(newsLink).removeClass("active");
-			$(this).addClass("active");
-			var btnFilter = $(this).attr('data-filter');
-			if (btnFilter == 'catAll') {
-				$(".other, .website, .sns, lp, all").css('display','none');
-				for(i = 0 ; i < limit ; i++) {
-					limitNews = $(".other, .website, .sns, lp, all")[i];
-					$(limitNews).fadeIn();
-				}
-			} else {
-				$(".other, .website, .sns, lp, all").css('display','none');
-				for(i = 0 ; i < limit ; i++) {
-					limitNews = $(".other, .website, .sns, lp, all").filter('[data-category = "' + btnFilter + '"]')[i];
-					$(limitNews).fadeIn();
-				}
-			}
-		});
-	});
+	
 	$('.slider li').on('click', function(){
 		let cat = $(this).html();
 		$('.list').hide(); // .listを一度すべて非表示にする
