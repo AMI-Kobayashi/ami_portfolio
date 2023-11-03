@@ -534,7 +534,7 @@ li {
         position: absolute;
         top: 100px;
         right: 0;
-        left: 5%;
+        left: 2%;
         width: 30vw;
         margin: 0 auto;
         padding-left: 200px;
@@ -854,7 +854,7 @@ li {
     .berry_ashirai {
         position: relative;
         width: 30%;
-        left: -520px;
+        left: -550px;
         top: -50px;
     }
     .readmore {
@@ -1098,7 +1098,7 @@ li {
         position: absolute;
         width: 116px;
         top: -220px;
-        left: 200px;
+        left: 180px;
     }
     .top_btn_contact {
         padding: 30px;
