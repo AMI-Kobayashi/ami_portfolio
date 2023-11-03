@@ -686,28 +686,29 @@ dd:first-of-type {
         margin-top: -70px;
     }
 }
+
 .lightbox {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     left: 0;
     right: 0;
     padding: 20px;
     box-sizing: border-box;
 }
-.lb_outerContainer {
+.lb-outerContainer {
     max-width: 100% !important;
 }
-
-.lightbox .lb_image {
+.lightbox .lb-image {
     max-width: 1000px;
     height: auto !important;
 }
+
 @media screen and (max-width: 1200px) {
-    .lb_outerContainer {
+    .lb-outerContainer {
         width: 90% !important;
     }
-    .lightbox .lb_image {
+    .lightbox .lb-image {
         width: 100% !important;
     }
 }
