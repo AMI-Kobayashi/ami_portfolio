@@ -566,15 +566,6 @@ h1 {
         width: 96%;
         margin: 0 auto;
     }
-    /* .WS04 {
-        display: none;
-    }
-    .WS05 {
-        display: none;
-    }
-    .WS06 {
-        display: none;
-    } */
 
     .works {
         display: flex;
@@ -635,7 +626,7 @@ h1 {
     }
 }
 /* ページネーション */
-.nav-links {
+/* .nav-links {
     padding: 2em;
     display: flex;
     justify-content: center;
@@ -669,7 +660,7 @@ span {
     display: none;
 }
 @media screen and (max-width: 1100px) {
-    /* 作業中 */
+   
     .nav-links a span {
         border: none;
     }
@@ -699,7 +690,7 @@ span {
         padding-top: 10px;
         letter-spacing: -3px;
     }
-}
+} */
 /* ここからfooter */
 
 .footer_sky {
