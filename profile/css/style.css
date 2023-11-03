@@ -555,7 +555,13 @@ li {
         right: 15%;
     }
     .dodted_line01 {
-        width: 100%;
+        width: 57vw;
+    }
+    .dodted_line02 {
+        width: 57vw;
+    }
+    .dodted_line03 {
+        width: 57vw;
     }
 }
 @media screen and (max-width: 767px) {
