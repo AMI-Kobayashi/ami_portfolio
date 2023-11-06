@@ -183,10 +183,7 @@ h1 {
         top: 0;
         transform: rotate(135deg);
     }
-    h1 {
-        width: 20vw;
-        padding-top: 5px;
-    }
+
     .insta {
         position: absolute;
         top: 7px;
@@ -204,14 +201,12 @@ h1 {
     }
 }
 
-/* @media screen and (max-width: 1040px) { */
-/* .nav_PC { */
-/* max-width: 30%; */
-/* } */
-/* h1 { */
-/* width: 50%; */
-/* } */
-/* } */
+@media screen and (max-width: 767px) {
+    h1 {
+        width: 20vw;
+        padding-top: 5px;
+    }
+}
 
 /* メインビジュアル */
 
@@ -498,6 +493,8 @@ h1 {
         z-index: 2;
     }
 }
+
+/* カテゴリー展開時のデザイン */
 
 /*ドットナビゲーションの設定*/
 

@@ -29,8 +29,8 @@
 	  
 		// allの場合
 		if(cat == "all"){
-		  $('.list').hide();
-		  $('.list').fadeIn();
+		  $('.list').hide("display","none");
+		  $('.list').fadeIn("display","block");
 		}
 		// 選択したカテゴリーだけを表示
 		$('.list').each(function(){
