@@ -381,6 +381,7 @@ h1 {
 }
 .slider li:hover {
     cursor: pointer;
+    opacity: 0.5;
 }
 .slider img {
     width: 15vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
@@ -495,9 +496,13 @@ h1 {
 }
 
 /* カテゴリー展開時のデザイン */
+.is-hide {
+    display: none;
+}
 
-/*ドットナビゲーションの設定*/
-
+.is-active {
+    padding-bottom: 1000px;
+}
 /* 制作物一覧 */
 .works01 {
     position: relative;
@@ -505,10 +510,17 @@ h1 {
 }
 
 .back_tree {
-    margin: 250px auto;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    top: 500px;
+
     position: absolute;
 }
 
+.back_tree img {
+    object-fit: contain;
+}
 .works {
     position: relative;
     display: flex;
@@ -560,6 +572,7 @@ h1 {
 
     .works01 {
         position: relative;
+
         padding-top: 50px;
         width: 96%;
         margin: 0 auto;
@@ -690,7 +703,10 @@ span {
     }
 } */
 /* ここからfooter */
-
+#footer {
+    position: relative;
+    bottom: 0;
+}
 .footer_sky {
     /* padding-top: 100px;→フッターで指定しない。上の要素で指定すること */
     max-width: 100%;
