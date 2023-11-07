@@ -1053,7 +1053,7 @@ li {
 .sp_contact_text {
     display: none;
 }
-/* ちょっとレスポンシブ対応できるかやってみたがごちゃごちゃに・・・意味なし。 */
+
 @media screen and (max-width: 1040px) {
     .bird03 .bird03 {
         display: none;
@@ -1226,4 +1226,17 @@ li {
     }
 }
 
-/* 制作実績０１ */
+.rotateY {
+    animation-name: rotateYAnime;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateYAnime {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}

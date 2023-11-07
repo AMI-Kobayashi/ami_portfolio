@@ -500,9 +500,10 @@ h1 {
     display: none;
 }
 
-.is-active {
-    padding-bottom: 1000px;
+.is-hide:active ~ .back_tree img {
+    display: none;
 }
+
 /* 制作物一覧 */
 .works01 {
     position: relative;
@@ -764,6 +765,10 @@ span {
 }
 
 @media screen and (max-width: 1040px) {
+    .footer {
+        position: relative;
+        bottom: 0;
+    }
     .pc_footer_sky {
         display: none;
     }

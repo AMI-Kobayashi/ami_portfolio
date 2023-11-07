@@ -425,6 +425,7 @@ section:nth-child(2n) {
 .intro_sp {
     display: none;
 }
+
 @media screen and (max-width: 1040px) {
     .main_copy {
         position: absolute;
@@ -502,7 +503,7 @@ section:nth-child(2n) {
 #profile {
     position: relative;
     /* 親要素にかけて上げないといけないrelativeちゃん */
-    padding-top: 250px;
+    padding-top: 170px;
     padding-bottom: 100px;
 }
 .sp_bird01 {
@@ -564,7 +565,7 @@ section:nth-child(2n) {
     position: absolute;
     max-width: 1000px;
     width: 35%;
-    top: 20px;
+    top: -170px;
     right: 170px;
     padding-top: 130px;
     margin: auto;
@@ -577,7 +578,7 @@ section:nth-child(2n) {
     position: absolute;
     max-width: 1000px;
     width: 100%;
-    top: 0;
+    top: -280px;
     left: 80px;
     padding-top: 350px;
 
@@ -600,7 +601,7 @@ section:nth-child(2n) {
     position: absolute;
     max-width: 340px;
     width: 35%;
-    top: -150px;
+    top: -330px;
     right: 10px;
     z-index: 1;
 }
@@ -1376,5 +1377,64 @@ section:nth-child(2n) {
     .Minori {
         font-size: 10px;
         margin-top: -70px;
+    }
+}
+
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.fadeUpTrigger {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
