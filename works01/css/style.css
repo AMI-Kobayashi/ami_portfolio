@@ -68,7 +68,7 @@ body {
 .wrap {
     display: flex;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.4);
     top: 0;
     left: 0;
     width: 100%;
@@ -745,13 +745,7 @@ span {
     padding-top: 80px;
     color: #808080;
 }
-.top_btn {
-    position: fixed;
-    right: 40px;
-    bottom: 100px;
-    width: 100px;
-    animation: spin 5.5s linear infinite;
-}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

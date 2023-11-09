@@ -84,8 +84,8 @@ body {
 .wrap {
     display: flex;
     position: absolute;
-    background-color: white;
-    opacity: 70%;
+    background-color: rgba(255, 255, 255, 0.4);
+
     top: 0;
     left: 0;
     width: 100%;
@@ -98,6 +98,7 @@ h1 {
     max-width: 150px;
     width: 100%;
     padding-left: 10%;
+    opacity: 0.7;
 }
 .nav_PC ul {
     display: flex;

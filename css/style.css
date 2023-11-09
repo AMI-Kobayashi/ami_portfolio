@@ -203,7 +203,7 @@ body {
 .wrap {
     display: flex;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.4);
     /* ヘッダーの白帯だけ透過、他のロゴとテキストは透けない */
     top: 0;
     left: 0;
@@ -1407,7 +1407,7 @@ section:nth-child(2n) {
 
 .fadeUp {
     animation-name: fadeUpAnime;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     opacity: 0;
 }

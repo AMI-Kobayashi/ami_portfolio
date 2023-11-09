@@ -2,11 +2,14 @@
 
 html {
     overflow-x: hidden;
-
     /* はみ出た要素を強制的に切る！ */
 }
 /* 全ページに共通するcssとしてcommon.cssを作成 */
 /* ハンバーガーメニュー */
+
+.cursor {
+    background-image: url(../images/cursol.png), auto;
+}
 
 .sp_nav {
     position: absolute;
