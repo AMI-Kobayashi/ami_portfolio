@@ -577,10 +577,9 @@ section:nth-child(2n) {
 }
 .hude .hude {
     position: absolute;
-    max-width: 1000px;
-    width: 100%;
+    width: 80%;
     top: -280px;
-    left: 80px;
+    left: 15%;
     padding-top: 350px;
 
     z-index: -1;
@@ -786,12 +785,14 @@ section:nth-child(2n) {
 
 #skills .skills_title_pc {
     position: relative;
-    top: 440px;
-    left: 480px;
+    top: 450px;
+    left: 36%;
     width: 30%;
     margin: 0 auto;
 }
-
+.title_SKILLS {
+    margin: 0 auto;
+}
 .skills_title_sp {
     display: none;
 }
@@ -956,6 +957,7 @@ section:nth-child(2n) {
     position: relative;
     width: 890px;
     margin: 0 auto;
+    padding-left: 40px;
 }
 .works {
     font-size: 14px;
@@ -1006,7 +1008,7 @@ section:nth-child(2n) {
 
 .btn02_eye {
     position: relative;
-    top: -50px;
+    top: 30px;
     margin: 0px auto;
     width: 170px;
 }
@@ -1064,6 +1066,7 @@ section:nth-child(2n) {
     }
     .haikei_tree01 {
         width: 96%;
+        padding-left: 0;
     }
 
     .tree {
@@ -1098,7 +1101,7 @@ section:nth-child(2n) {
     }
     .btn02_eye {
         position: relative;
-        top: -250px;
+        top: -300px;
     }
 }
 /* ここからCONTACT */
@@ -1323,15 +1326,6 @@ section:nth-child(2n) {
     right: 40px;
     bottom: 100px;
     width: 100px;
-    animation: spin 5.5s linear infinite;
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 .top_btn img {
