@@ -735,6 +735,7 @@ span {
     font-family: "fot-matisse-pron", sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: #808080;
 }
 .Minori {
     font-family: "fot-matisse-pron", sans-serif;
@@ -742,6 +743,7 @@ span {
     font-style: normal;
     text-align: center;
     padding-top: 80px;
+    color: #808080;
 }
 .top_btn {
     position: fixed;

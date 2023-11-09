@@ -649,6 +649,7 @@ section:nth-child(2n) {
     #profile {
         position: relative;
         margin-top: 200px;
+        margin-bottom: 100px;
     }
     .sp_bird01 {
         display: block;
@@ -841,18 +842,18 @@ section:nth-child(2n) {
 }
 @media screen and (max-width: 1040px) {
     #skills {
-        margin-top: -400px;
+        margin-top: -240px;
     }
     .bird01 .bird01 {
         display: none;
-        margin: 0 auto;
     }
 
     .sp_bird02 {
         position: absolute;
         display: block;
         right: 50px;
-        margin-top: -100px;
+
+        margin: 300px auto 0;
     }
 
     #skills h2 {
@@ -871,10 +872,12 @@ section:nth-child(2n) {
         /* サイズ大きくしたいが変わらない＞＜ */
         position: relative;
         display: block;
-        top: 330px;
+        top: 280px;
         left: 20px;
     }
-
+    .skills_wrap {
+        margin-top: 210px;
+    }
     .skills {
         display: block;
         padding-top: 200px;
@@ -1304,6 +1307,7 @@ section:nth-child(2n) {
     font-family: "fot-matisse-pron", sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: #808080;
 }
 .Minori {
     font-family: "fot-matisse-pron", sans-serif;
@@ -1311,6 +1315,7 @@ section:nth-child(2n) {
     font-style: normal;
     text-align: center;
     padding-top: 80px;
+    color: #808080;
 }
 
 .top_btn {

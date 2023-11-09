@@ -526,6 +526,7 @@ button p {
     font-weight: 500;
     font-style: normal;
     letter-spacing: 1.5px;
+    color: #808080;
 }
 .Minori {
     font-family: "fot-matisse-pron", sans-serif;
@@ -533,6 +534,7 @@ button p {
     font-style: normal;
     text-align: center;
     padding-top: 100px;
+    color: #808080;
 }
 
 .top_btn {

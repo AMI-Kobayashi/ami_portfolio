@@ -356,6 +356,7 @@ h1 {
     font-family: "fot-matisse-pron", sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: #808080;
 }
 .Minori {
     color: #666666;
@@ -364,6 +365,7 @@ h1 {
     font-style: normal;
     text-align: center;
     padding-top: 100px;
+    color: #808080;
 }
 .sp_footer_sky {
     display: none;

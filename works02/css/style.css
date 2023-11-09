@@ -622,6 +622,7 @@ dd:first-of-type {
     font-weight: 500;
     font-style: normal;
     letter-spacing: 1.5px;
+    color: #808080;
 }
 .nav_footer_PC ul li :first-child {
     padding-left: 0;
@@ -632,6 +633,7 @@ dd:first-of-type {
     font-style: normal;
     text-align: center;
     padding-top: 100px;
+    color: #808080;
 }
 
 .top_btn {
