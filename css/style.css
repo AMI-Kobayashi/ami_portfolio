@@ -1355,7 +1355,7 @@ section:nth-child(2n) {
         position: relative;
         display: block;
         justify-content: left;
-        margin-top: -375px;
+        margin-top: -355px;
         padding-left: 0px;
         z-index: 1;
         width: 100%;
@@ -1382,7 +1382,7 @@ section:nth-child(2n) {
     }
     .Minori {
         font-size: 10px;
-        margin-top: -70px;
+        margin-top: -40px;
     }
 }
 
