@@ -392,7 +392,7 @@ h1 {
 
 .profile_photo {
     position: absolute;
-    top: 190px;
+    top: -90px;
     right: -20px;
     width: 50%;
 }
@@ -401,7 +401,7 @@ h1 {
     position: absolute;
     max-width: 1000px;
     width: 100%;
-    top: 130px;
+    top: 0;
     left: -30px;
 
     z-index: -1;
@@ -409,7 +409,7 @@ h1 {
 
 #Aboutme .blueberry {
     position: absolute;
-    top: 310px;
+    top: 140px;
     right: -50px;
     width: 50%;
     padding-bottom: 50px;
@@ -549,6 +549,7 @@ li {
         margin: 0 auto;
         padding-right: 200px;
     }
+
     #Aboutme .blueberry {
         top: 180px;
         width: 15vw;
@@ -623,6 +624,7 @@ li {
         width: 58vw;
         padding-left: 150px;
     }
+
     .hude {
         position: absolute;
         width: 60vw;
@@ -632,6 +634,10 @@ li {
         z-index: -1;
         margin: 0 auto;
         padding-right: 0px;
+    }
+    .Ami_sp {
+        top: -130px;
+        left: 60px;
     }
 }
 /* ここからキャリア */
@@ -1238,5 +1244,44 @@ li {
     }
     to {
         transform: rotateY(-360deg);
+    }
+}
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeUpTrigger {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
