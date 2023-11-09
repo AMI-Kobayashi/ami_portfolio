@@ -417,42 +417,18 @@ h1 {
 } */
 
 .slider .slick-slide {
-    transform: scale(0.8); /*左右の画像のサイズを80%に*/
-    transition: all 0.5s; /*拡大や透過のアニメーションを0.5秒で行う*/
-    opacity: 0.5; /*透過50%*/
+    transform: scale(0.8);
+    transition: all 0.5s;
 }
 
-.slider .slick-slide.slick-center {
-    transform: scale(1); /*中央の画像のサイズだけ等倍に*/
-    opacity: 1; /*透過なし*/
-}
+/* .slider .slick-slide.slick-center {
+    transform: scale(1);
+    opacity: 1;
+} */
 
 /*矢印の設定*/
 
 /*戻る、次へ矢印の位置*/
-.slick-prev,
-.slick-next {
-    position: absolute; /*絶対配置にする*/
-    top: 43%;
-    outline: none; /*クリックをしたら出てくる枠線を消す*/
-    border-top: 2px dotted #a8b79a; /*矢印の色*/
-    border-right: 2px dotted #a8b79a; /*矢印の色*/
-    height: 15px;
-    width: 15px;
-}
-
-.slick-prev {
-    /*戻る矢印の位置と形状*/
-    left: 38%;
-    transform: rotate(-135deg);
-    z-index: 1;
-}
-
-.slick-next {
-    /*次へ矢印の位置と形状*/
-    right: 38%;
-    transform: rotate(45deg);
-}
 
 @media screen and (max-width: 767px) {
     .slider {
@@ -473,26 +449,6 @@ h1 {
         margin: 0 auto;
         /* padding: 20px; */
     }
-    .slick-prev,
-    .slick-next {
-        width: 10px;
-        height: 10px;
-        border-top: 2px dotted #a8b79a; /*矢印の色*/
-        border-right: 2px dotted #a8b79a; /*矢印の色*/
-    }
-    .slick-prev {
-        /*戻る矢印の位置と形状*/
-        left: 30%;
-        transform: rotate(-135deg);
-        z-index: 1;
-    }
-
-    .slick-next {
-        /*次へ矢印の位置と形状*/
-        right: 30%;
-        transform: rotate(45deg);
-        z-index: 2;
-    }
 }
 
 /* カテゴリー展開時のデザイン */
@@ -508,19 +464,19 @@ h1 {
 .works01 {
     position: relative;
     width: 94%;
+    min-height: 1200px;
 }
 
 .back_tree {
-    margin: 0px auto;
-    left: 0;
-    right: 0;
-    top: 500px;
+    margin: 0 auto;
 
+    top: 400px;
+    padding-left: 17%;
     position: absolute;
 }
 
 .back_tree img {
-    object-fit: contain;
+    width: 80%;
 }
 .works {
     position: relative;

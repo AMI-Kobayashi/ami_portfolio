@@ -232,6 +232,7 @@ h1 {
 .works02_main {
     width: 100%;
     height: 750px;
+    position: relative;
 }
 .TOP_sky {
     width: 100%;
@@ -483,6 +484,11 @@ dd:first-of-type {
 .lightbox .lb_image {
     width: 100% !important;
     height: auto !important;
+}
+
+dl a {
+    width: 83%;
+    border-bottom: 1px dotted #959595;
 }
 @media screen and (max-width: 1040px) {
     .works02 {
