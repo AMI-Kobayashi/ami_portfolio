@@ -1234,20 +1234,6 @@ li {
     }
 }
 
-.rotateY {
-    animation-name: rotateYAnime;
-    animation-duration: 7s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes rotateYAnime {
-    from {
-        transform: rotateY(0);
-    }
-    to {
-        transform: rotateY(-360deg);
-    }
-}
 .fadeUp {
     animation-name: fadeUpAnime;
     animation-duration: 1.5s;
