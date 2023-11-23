@@ -1169,15 +1169,6 @@ li {
     right: 40px;
     bottom: 100px;
     width: 100px;
-    animation: spin 5.5s linear infinite;
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 .top_btn img {
@@ -1234,6 +1225,20 @@ li {
     }
 }
 
+.rotateY {
+    animation-name: rotateYAnime;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateYAnime {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
 .fadeUp {
     animation-name: fadeUpAnime;
     animation-duration: 1.5s;
